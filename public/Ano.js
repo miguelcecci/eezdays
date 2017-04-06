@@ -17,12 +17,14 @@ function Ano(x, y, sizeX, sizeY){
       for (var j = 0; j < this.wdisp; j++) {
         this.month[count] = new Mes(this.x+j*dxs,this.y+i*dys, dxs, dys, count);
         this.month[count].draw();
+        this.month[count].generateDays();
         count++;
       }
     }
   }
-  this.mostra = function(){
+  this.draw = function(){
     textAlign(CENTER);
+    fill(10,220,220);
     textSize(20);
     text("2017", this.sx/2, 20);
     textSize(12);

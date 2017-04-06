@@ -9,8 +9,9 @@ function setup() {
 
 function draw() {
   createCanvas(windowWidth, windowHeight);
-  background(0);
+  background(10,40,50);
   ye = new Ano(0,40, windowWidth, windowHeight-40);
-  ye.mostra();
+  ye.draw();
   ye.generateMonths();
 }
+//cabecalho 10,40,50
