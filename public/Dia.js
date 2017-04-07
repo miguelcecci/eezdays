@@ -6,6 +6,7 @@ function Dia(x, y, sizeX, sizeY, count){
   this.sy = sizeY;
   this.marked = 0;
   this.dia = count;
+  this.menu;
 
   this.draw = function(){
     stroke(10,80,90);
@@ -15,6 +16,7 @@ function Dia(x, y, sizeX, sizeY, count){
         fill(10,40,50);
         if(mouseIsPressed){
           fill(10,250,220);
+          this.menu = new QuickMenu(this.x, this.y, this.sx, this.sy);
         }
       }
     }

@@ -33,6 +33,25 @@ function Mes(x, y, sizeX, sizeY, countas){
     fill(10,80,90);
     rect(this.x, this.y, this.sx, this.sy/15);
     fill(10,220,220);
-    text(this.nomes[this.nome], this.x+this.sx/2, this.y+this.sy/20);
+    if(hover(this.x, this.y, this.sx, this.sy)){
+      // text("S M T W T F S", this.x+this.sx/2, this.y+this.sy/20);
+      text("S", this.x+this.sx/14, this.y+this.sy/20);
+      text("M", this.x+3*(this.sx/14), this.y+this.sy/20);
+      text("T", this.x+5*this.sx/14, this.y+this.sy/20);
+      text("W", this.x+7*this.sx/14, this.y+this.sy/20);
+      text("T", this.x+9*this.sx/14, this.y+this.sy/20);
+      text("F", this.x+11*this.sx/14, this.y+this.sy/20);
+      text("S", this.x+13*this.sx/14, this.y+this.sy/20);
+    }else{
+      text(this.nomes[this.nome], this.x+this.sx/2, this.y+this.sy/20);
+    }
+  }
+
+  this.overdraw = function() {
+    if(this.nome == 0 || this.nome%2 == 0){
+      noStroke();
+      fill(10,22,22,28);
+      rect(this.x, this.y, this.sx, this.sy);
+    }
   }
 }

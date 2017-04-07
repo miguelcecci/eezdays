@@ -18,6 +18,7 @@ function Ano(x, y, sizeX, sizeY){
         this.month[count] = new Mes(this.x+j*dxs,this.y+i*dys, dxs, dys, count);
         this.month[count].draw();
         this.month[count].generateDays();
+        this.month[count].overdraw();
         count++;
       }
     }
