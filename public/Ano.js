@@ -5,8 +5,13 @@ function Ano(x, y, sizeX, sizeY){
   this.y = y;
   this.sx = sizeX;
   this.sy = sizeY;
-  this.wdisp = 4;
-  this.hdisp = 3;
+  if(1.4*sizeY<sizeX){
+    this.wdisp = 4;
+    this.hdisp = 3;
+  }else{
+    this.wdisp = 3;
+    this.hdisp = 4;
+  }
 
   this.generateMonths = function(){
     //aqui define-se a área que os meses vao ocupar no calendario
@@ -27,7 +32,9 @@ function Ano(x, y, sizeX, sizeY){
     textAlign(CENTER);
     fill(10,220,220);
     textSize(20);
-    text("2017", this.sx/2, 20);
+    text(year(), this.sx/2, 20);
     textSize(12);
+    var display = new TimeDisplay(this.sx/1.02, 20);
+    display.show();
   }
 }
