@@ -17,7 +17,7 @@ function Mes(x, y, sizeX, sizeY, countas){
     var count = 0;
     for (var i = 0; i < this.hdisp; i++) {
       for (var j = 0; j < this.wdisp; j++) {
-        this.day[count] = new Dia(this.x+j*dxs,(this.y+i*dys)+this.sy/15, dxs, dys, count);
+        this.day[count] = new Dia(this.x+j*dxs,(this.y+i*dys)+this.sy/15, dxs, dys, count, this.nome);
         this.day[count].draw();
         fill(200);
         count++;
@@ -33,7 +33,7 @@ function Mes(x, y, sizeX, sizeY, countas){
     fill(10,80,90);
     rect(this.x, this.y, this.sx, this.sy/15);
     fill(10,220,220);
-    if(hover(this.x, this.y, this.sx, this.sy)){
+    if(rover(this.x, this.y, this.sx, this.sy)){
       // text("S M T W T F S", this.x+this.sx/2, this.y+this.sy/20);
       text("S", this.x+this.sx/14, this.y+this.sy/20);
       text("M", this.x+3*(this.sx/14), this.y+this.sy/20);
